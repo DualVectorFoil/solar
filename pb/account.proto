@@ -15,7 +15,6 @@ message Profile {
     required string pwd = 10;
     required int64 registeredAt = 11;
     required int64 lastLoginAt = 12;
-    required string token = 13;
     required string email = 14;
 }
 
@@ -26,7 +25,7 @@ message RegisterRequest {
     required string pwd = 4;
     required int32 phoneCode = 5;
     required string id = 6;
-    required string Token = 7;
+    required string avatarUrl = 7;
 }
 
 message RegisterResp {
@@ -42,7 +41,6 @@ message LoginRequest {
     required string pwd = 4;
     required int32 phoneCode = 5;
     required string id = 6;
-    required string Token = 7;
 }
 
 message LoginResp {

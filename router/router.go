@@ -8,7 +8,6 @@ import (
 
 func Init() {
 
-
 	router := gin.Default()
 	router.NoRoute()
 
