@@ -1,0 +1,57 @@
+syntax = "proto2";
+
+package pb;
+
+message Profile {
+    required string id = 1;
+    required string phoneNum = 2;
+    required string avatarUrl = 3;
+    required string userName = 4;
+    required string locale = 5;
+    required string bio = 6;
+    required int32 followers = 7;
+    required int32 following = 8;
+    required int32 artworkCount = 9;
+    required string pwd = 10;
+    required int64 registeredAt = 11;
+    required int64 lastLoginAt = 12;
+    required string token = 13;
+    required string email = 14;
+}
+
+message RegisterRequest {
+    required string phoneNum = 1;
+    required string userName = 2;
+    required string email = 3;
+    required string pwd = 4;
+    required int32 phoneCode = 5;
+    required string id = 6;
+    required string Token = 7;
+}
+
+message RegisterResp {
+    required bool isSuccess = 1;
+    required string errMsg = 2;
+    required Profile profile = 3;
+}
+
+message LoginRequest {
+    required string phoneNum = 1;
+    required string userName = 2;
+    required string email = 3;
+    required string pwd = 4;
+    required int32 phoneCode = 5;
+    required string id = 6;
+    required string Token = 7;
+}
+
+message LoginResp {
+    required bool isSuccess = 1;
+    required string errMsg = 2;
+    required Profile profile = 3;
+}
+
+service AccountService {
+    rpc Register(RegisterRequest) returns (RegisterResp);
+    rpc Login(LoginRequest) returns (LoginResp);
+}
